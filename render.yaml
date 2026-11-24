@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: salman-smm-panel
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        value: "6305047037"
+      - key: FIREBASE_CREDENTIALS_JSON
+        sync: false
+      - key: RENDER_EXTERNAL_URL
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: PAYMENT_INSTRUCTIONS
+        value: "পেমেন্ট করার পর সঠিক Transaction ID দিন।"
+      - key: CURRENCY
+        value: "৳"
